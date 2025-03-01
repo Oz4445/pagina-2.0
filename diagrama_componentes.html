@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Componentes</title>
+    <link rel="stylesheet" href="despliegue.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diagrama de Componentes</h1>
+
+        <div class="diagram-section">
+            <h2>Ejemplo de Diagrama de Componentes</h2>
+            <img src="imagenes/componentes.jpg" alt="Diagrama de Componentes" class="zoomable">
+            <p>Organiza los diferentes módulos como gestión de voluntarios, actividades, donaciones y notificaciones. En la fase de diseño, es crucial porque clarifica las relaciones entre los componentes, facilita la escalabilidad y mejora la mantenibilidad del sistema. También ayuda a identificar dependencias, optimizar la comunicación entre módulos y garantizar una arquitectura bien estructurada. Al separar responsabilidades, permite un desarrollo eficiente y adaptable, asegurando que cada funcionalidad del sistema opere de manera independiente pero coordinada dentro de la plataforma.</p>
+        </div>
+
+        <a href="despliegue.html" class="btn">Volver a Vista de Despliegue</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".zoomable").forEach(img => {
+                img.addEventListener("click", function () {
+                    const fullscreenDiv = document.createElement("div");
+                    fullscreenDiv.classList.add("fullscreen");
+
+                    const imgClone = document.createElement("img");
+                    imgClone.src = img.src;
+                    imgClone.alt = img.alt;
+
+                    fullscreenDiv.appendChild(imgClone);
+                    document.body.appendChild(fullscreenDiv);
+
+                    fullscreenDiv.addEventListener("click", function () {
+                        fullscreenDiv.remove();
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

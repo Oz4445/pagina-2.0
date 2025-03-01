@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+1 Vista de Escenarios</title>
+    <link rel="stylesheet" href="escenarios.css"> <!-- Nuevo CSS para esta página -->
+</head>
+<body>
+    <div class="container">
+        <h1>+1 Vista de Escenarios</h1>
+
+        <div class="diagram-section">
+            <h2>Diagrama de Casos de Uso</h2>
+            <img src="imagenes/casos_uso.jpg" alt="Diagrama de Casos de Uso" id="zoomable">
+            <p>Define la interacción entre los actores y las funciones clave de la aplicación de gestión de voluntarios en organizaciones benéficas. Contribuye a la arquitectura al estructurar los módulos del sistema, identificando responsabilidades y dependencias. En la fase de diseño, es esencial porque clarifica los requisitos funcionales, asegurando que cada actor (administrador, voluntario, donante y público) tenga acceso a las funciones necesarias. Además, facilita la planificación del desarrollo, evitando omisiones y garantizando que todas las interacciones sean eficientes. Es la base para la implementación del sistema, asegurando un diseño bien organizado y funcional.</p>
+        </div>
+
+        <!-- Botón para volver -->
+        <a href="index.html" class="btn">Volver al Inicio</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const img = document.getElementById("zoomable");
+
+            img.addEventListener("click", function () {
+                const fullscreenDiv = document.createElement("div");
+                fullscreenDiv.classList.add("fullscreen");
+
+                const imgClone = document.createElement("img");
+                imgClone.src = img.src;
+                imgClone.alt = img.alt;
+
+                fullscreenDiv.appendChild(imgClone);
+                document.body.appendChild(fullscreenDiv);
+
+                fullscreenDiv.addEventListener("click", function () {
+                    fullscreenDiv.remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

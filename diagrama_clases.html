@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Clases</title>
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diagrama de Clases</h1>
+
+        <div class="image-container">
+            <h2>Diagrama de Clases</h2>
+            <img src="imagenes/diagrama_clases.jpg" alt="Diagrama de Clases">
+            <p>El diagrama de clases estructura la arquitectura, definiendo las entidades principales, atributos y relaciones. Contribuye organizando la lógica del sistema, asegurando modularidad. En la fase de diseño, es clave porque clarifica la estructura de datos, las interacciones entre objetos y la funcionalidad de cada módulo. Permite detectar errores conceptuales antes de la implementación, optimizar la base de datos. Su uso garantiza un desarrollo más eficiente y coherente, asegurando que cada componente cumpla correctamente su función.</p>
+        </div>
+
+        <a href="logica.html" class="btn">Volver a Vista Lógica</a>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const closeModal = document.querySelector(".close");
+
+            document.querySelectorAll(".image-container img").forEach(img => {
+                img.addEventListener("click", function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

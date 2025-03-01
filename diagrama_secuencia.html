@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Secuencia</title>
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diagrama de Secuencia</h1>
+
+        <!-- Sección de imágenes -->
+        <div class="gallery">
+            <div class="image-container">
+                <h2>diagrama Gestión de voluntarios</h2>
+                <img src="imagenes/secuencia1.jpg" alt="Diagrama de Secuencia 1">
+                <p>Modela el flujo de interacción entre el administrador, el voluntario y el sistema, definiendo procesos como registro, actualización, eliminación y asignación de tareas. Contribuye a la arquitectura del sistema al estructurar la comunicación entre componentes, asegurando una ejecución lógica y ordenada. En la fase de diseño, su importancia radica en visualizar el comportamiento dinámico del sistema, prever errores y optimizar el manejo de excepciones. Además, facilita la implementación al clarificar los mensajes entre actores y módulos, mejorando la eficiencia del desarrollo y garantizando una interacción fluida dentro del sistema.</p>
+            </div>
+            <div class="image-container">
+                <h2>diagrama Gestión de actividades</h2>
+                <img src="imagenes/secuencia2.jpg" alt="Diagrama de Secuencia 2">
+                <p>Muestra la interacción entre el administrador, voluntario, base de datos y notificador, estructurando procesos como creación de actividades, visualización del calendario y envío de notificaciones. Contribuye a la arquitectura del sistema al definir el flujo de información entre los módulos, asegurando una ejecución clara y organizada. En la fase de diseño, es crucial porque visualiza posibles errores, optimiza la lógica del negocio y facilita la integración con otros módulos. Además, permite prever excepciones y mejorar la experiencia del usuario, garantizando una gestión eficiente y automatizada de las actividades.</p>
+            </div>
+            <div class="image-container">
+                <h2>diagrama Notificaciones</h2>
+                <img src="imagenes/secuencia3.jpg" alt="Diagrama de Secuencia 3">
+                <p>Módulo de notificaciones modela la interacción entre el administrador, el sistema de notificaciones y los usuarios. Contribuye a la arquitectura de la aplicación estructurando el flujo de envío de notificaciones, garantizando una comunicación eficiente. En la fase de diseño, su importancia radica en visualizar la lógica de procesamiento, gestionar errores y optimizar el envío a múltiples destinatarios. Además, facilita la integración con otros módulos, asegurando que los usuarios reciban notificaciones. Esto mejora la experiencia del usuario y la efectividad en la gestión de voluntarios y actividades.</p>
+            </div>
+            <div class="image-container">
+                <h2>diagrama Gestión de donaciones</h2>
+                <img src="imagenes/secuencia4.jpg" alt="Diagrama de Secuencia 4">
+                <p>Modela la interacción entre el donante, el administrador y el sistema, detallando el flujo del registro, selección de método y procesamiento de la donación. Contribuye a la arquitectura del sistema organizando la secuencia de acciones necesarias para validar y confirmar donaciones. En la fase de diseño, es crucial porque visualiza la lógica de transacciones, maneja errores y asegura la correcta comunicación entre módulos. Además, optimiza la integración con notificaciones y reportes, garantizando transparencia y una mejor experiencia para los donantes, fortaleciendo la confiabilidad del sistema.</p>
+            </div>
+            <div class="image-container">
+                <h2>diagrama Información pública</h2>
+                <img src="imagenes/secuencia5.jpg" alt="Diagrama de Secuencia 5">
+                <p>En el módulo de información pública modela la interacción del público con el sistema para acceder a información, ver el calendario de actividades y registrarse como voluntario o donante. Contribuye a la arquitectura estructurando el flujo de solicitudes y respuestas, asegurando un acceso eficiente a los datos. En la fase de diseño, su importancia radica en visualizar el comportamiento del sistema ante diferentes escenarios. Además, facilita la integración con otros módulos, optimiza la experiencia del usuario y mejora la gestión de información, garantizando un acceso claro y estructurado.</p>
+            </div>
+            <div class="image-container">
+                <h2>diagrama Reportes</h2>
+                <img src="imagenes/secuencia6.jpg" alt="Diagrama de Secuencia 6">
+                <p>En el módulo de reportes modela la generación de informes sobre actividades, definiendo la interacción entre el administrador, el sistema de reportes y el módulo de actividades. Contribuye a la arquitectura al estructurar el flujo de consultas y validaciones, asegurando una recopilación eficiente de datos. En la fase de diseño, su importancia radica en visualizar el proceso de generación de reportes, optimizar la obtención de información. Además, facilita la integración con otros módulos, mejora la toma de decisiones basada en datos y garantiza una gestión eficiente de las actividades dentro del sistema.</p>
+            </div>
+            <div class="image-container">
+                <h2>diagrama Gestión de documentos</h2>
+                <img src="imagenes/secuencia7.jpg" alt="Diagrama de Secuencia 7">
+                <p>En el módulo de gestión de documentos modela la interacción entre el administrador, los voluntarios y el sistema para compartir documentos. Contribuye a la arquitectura organizando el flujo de envío de documentos, asegurando una distribución eficiente. En la fase de diseño, su importancia radica en visualizar y optimizar el proceso. Además, facilita la integración con otros módulos, mejorando la comunicación y accesibilidad de información para los voluntarios. Su estructura garantiza que cada voluntario reciba los documentos adecuados, optimizando la gestión y el desempeño dentro del sistema.</p>
+            </div>
+        </div>
+
+        <!-- Botón para volver -->
+        <a href="logica.html" class="btn">Volver a Vista Lógica</a>
+    </div>
+
+    <!-- Modal para mostrar la imagen en grande -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Código JavaScript para el modal de imagen -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const closeModal = document.querySelector(".close");
+
+            document.querySelectorAll(".image-container img").forEach(img => {
+                img.addEventListener("click", function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

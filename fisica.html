@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Física</title>
+    <link rel="stylesheet" href="fisica.css"> <!-- Nuevo CSS para esta página -->
+</head>
+<body>
+    <div class="container">
+        <h1>Vista Física</h1>
+        <p class="subtitle">Ingenieros de Sistemas <br> Topología del sistema</p>
+
+        <div class="diagram-section">
+            <h2>Diagrama de Despliegue</h2>
+            <img src="imagenes/despliegue_fisico.jpg" alt="Diagrama de Despliegue" id="zoomable">
+            <p>Define la interacción entre los clientes, el servidor web, el servidor de aplicación y la base de datos. Su importancia en la fase de diseño radica en garantizar una estructura escalable, segura y eficiente, permitiendo una distribución clara de responsabilidades. Facilita la planificación de la infraestructura, optimiza la comunicación entre módulos y asegura un correcto manejo de datos, mejorando la experiencia del usuario y la eficiencia del sistema. Es esencial para tomar decisiones tecnológicas estratégicas.
+            </p>
+        </div>
+
+        <!-- Botón para volver -->
+        <a href="index.html" class="btn">Volver al Inicio</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const img = document.getElementById("zoomable");
+
+            img.addEventListener("click", function () {
+                const fullscreenDiv = document.createElement("div");
+                fullscreenDiv.classList.add("fullscreen");
+
+                const imgClone = document.createElement("img");
+                imgClone.src = img.src;
+                imgClone.alt = img.alt;
+
+                fullscreenDiv.appendChild(imgClone);
+                document.body.appendChild(fullscreenDiv);
+
+                fullscreenDiv.addEventListener("click", function () {
+                    fullscreenDiv.remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

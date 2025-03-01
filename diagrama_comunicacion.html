@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Comunicación</title>
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diagrama de Comunicación</h1>
+
+        <!-- Sección de imágenes -->
+        <div class="gallery">
+            <div class="image-container">
+                <h2>GESTION DE VOLUNTARIOS</h2>
+                <img src="imagenes/comunicacion1.jpg" alt="Diagrama de Comunicación 1">
+                <p>Muestra cómo interactúan los actores (administrador y voluntario) con los componentes del sistema. Contribuye a la arquitectura de tu aplicación al definir el flujo de mensajes entre usuarios y objetos clave, asegurando una interacción estructurada y eficiente. En la fase de diseño, su importancia radica en visualizar la secuencia de comunicación, identificando dependencias y optimizando la respuesta del sistema.</p>
+            </div>
+            <div class="image-container">
+                <h2>GESTION DE ACTIVIDADES</h2>
+                <img src="imagenes/comunicacion2.jpg" alt="Diagrama de Comunicación 2">
+                <p>Muestra cómo interactúan los administradores y voluntarios con los objetos del sistema, como Actividad y Calendario. Contribuye a la arquitectura de la aplicación organizando el flujo de mensajes entre los actores y los módulos, asegurando una coordinación clara y eficiente. En la fase de diseño, su importancia radica en definir la secuencia de interacciones, optimizando la comunicación y el procesamiento de información.</p>
+            </div>
+            <div class="image-container">
+                <h2>NOTIFICACIONES</h2>
+                <img src="imagenes/comunicacion3.jpg" alt="Diagrama de Comunicación 3">
+                <p>En el módulo de notificaciones muestra la interacción entre el administrador, el voluntario y el sistema para el envío y recepción de notificaciones. Contribuye a la arquitectura de la aplicación al definir el flujo de mensajes y asegurar que la comunicación sea clara y eficiente. En la fase de diseño, su importancia radica en estructurar el proceso de notificación, garantizando que los mensajes lleguen correctamente a los usuarios.</p>
+            </div>
+            <div class="image-container">
+                <h2>GESTION DE DONACIONES</h2>
+                <img src="imagenes/comunicacion4.jpg" alt="Diagrama de Comunicación 4">
+                <p>Define la interacción entre el donante, el administrador y el sistema, asegurando un flujo estructurado para el registro, selección de forma de donación y confirmación. Contribuye a la arquitectura de la aplicación al organizar los mensajes entre actores y objetos, garantizando coherencia y eficiencia en la transacción.</p>
+            </div>
+            <div class="image-container">
+                <h2>INFORMACION PUBLICA</h2>
+                <img src="imagenes/comunicacion5.jpg" alt="Diagrama de Comunicación 5">
+                <p>Muestra la interacción entre el público general y el sistema, facilitando el acceso a información, calendario, foros y registros. Contribuye a la arquitectura del sistema organizando la comunicación entre usuarios y módulos clave, garantizando una estructura eficiente y accesible. En la fase de diseño, su importancia radica en visualizar cómo fluye la información, asegurando una navegación clara y mejorando la experiencia del usuario.</p>
+            </div>
+            <div class="image-container">
+                <h2>REPORTES</h2>
+                <img src="imagenes/comunicacion6.jpg" alt="Diagrama de Comunicación 6">
+                <p>Muestra la interacción entre el administrador y el sistema para la generación y visualización de informes. Contribuye a la arquitectura organizando la comunicación entre los módulos, asegurando una gestión estructurada de los datos. En la fase de diseño, su importancia radica en definir un flujo eficiente para la generación de reportes, garantizando que la información sea accesible y comprensible.</p>
+            </div>
+            <div class="image-container">
+                <h2>GESTION DE DOCUMENTOS</h2>
+                <img src="imagenes/comunicacion7.jpg" alt="Diagrama de Comunicación 7">
+                <p>Modela la interacción entre administradores, voluntarios y el sistema para compartir, enviar y visualizar documentos. Contribuye a la arquitectura estructurando el flujo de información y asegurando una gestión eficiente de archivos dentro de la aplicación. En la fase de diseño, es crucial porque define cómo se intercambian los documentos, optimizando la accesibilidad y organización.</p>
+            </div>
+        </div>
+
+        <!-- Botón para volver -->
+        <a href="logica.html" class="btn">Volver a Vista Lógica</a>
+    </div>
+
+    <!-- Modal para mostrar la imagen en grande -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Código JavaScript para el modal de imagen -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const closeModal = document.querySelector(".close");
+
+            document.querySelectorAll(".image-container img").forEach(img => {
+                img.addEventListener("click", function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
